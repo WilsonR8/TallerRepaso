@@ -2,68 +2,115 @@ package Model;
 
 import processing.core.PApplet;
 
-public class Dog {
+public class Dog implements Comparable <Dog> {
 	private String name,age,breed,date;
-	private String id;
+	private int id;
 	private int posX;
-	public Dog(String name, String age, String breed, String date,String id, PApplet app){
+	private int posY;
+	private PApplet app;
+	
+	
+	public Dog(String name, String age, String breed, String date, int id, PApplet app){
 		this.name=name;
 		this.age=age;
 		this.breed=breed;
 		this.date=date;
 		this.id=id;
-		this.posX=50;
+		this.posX=30;
+		this.app=app;
+	}
+	
+	public void drawDog (int posY, PApplet app) {
+		app.fill(255);
+		
+		app.text("Id", 50, 45);
+		app.text (this.id, posX, posY);
+		
+		app.text("Name", 100, 45);
+		app.text (this.name, posX + 50, posY);
+		
+		app.text("Age", 190, 45);
+		app.text (this.age, posX+ 150, posY);
+		
+		app.text("Breed", 280, 45);
+		app.text (this.breed, posX + 220, posY);
+		
+		app.text("Date", 460, 45);
+		app.text (this.date, posX+ 400, posY);
+
+		
+	}
+	
+	public int compareTo(Dog otherDog) {
+		return this.id - otherDog.getId();
+	
 	}
 	
 	
-	public void paintDog(int posY, PApplet app) {
-		app.text(this.name,posX,posY);
-		app.text(this.age,posX+50,posY);
-		app.text(this.breed,posX+100,posY);
-		app.text(this.date,posX+150,posY);
-		app.text(this.id,posX+200,posY);
+	//Getters & Setters
+	public String getName() {
+		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
-public String getid() {
-	return id;
-}
+	public String getAge() {
+		return age;
+	}
 
-public void setId(String id) {
-	this.id = id;
-}
+	public void setAge(String age) {
+		this.age = age;
+	}
 
-public String getAge() {
-	return age;
-}
+	public String getBreed() {
+		return breed;
+	}
 
-public void setAge(String age) {
-	this.age = age;
-}
+	public void setBreed(String breed) {
+		this.breed = breed;
+	}
 
-public String getBreed() {
-	return breed;
-}
+	public int getPosX() {
+		return posX;
+	}
 
-public void setBreed(String breed) {
-	this.breed = breed;
-}
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
 
-public String getNAme() {
-	return name;
-}
+	public int getPosY() {
+		return posY;
+	}
 
-public void setName(String name) {
-	this.name = name;
-}
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
 
-public String getDate() {
-	return date;
-}
+	public PApplet getApp() {
+		return app;
+	}
 
-public void setDate(String date) {
-	this.date = date;
-}
+	public void setApp(PApplet app) {
+		this.app = app;
+	}
 
+	public String getDate() {
+		return date;
+	}
 
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	
 }
