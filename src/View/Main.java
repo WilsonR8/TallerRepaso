@@ -9,7 +9,7 @@ public class Main extends PApplet {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		PApplet.main("Main");
+		PApplet.main("View.Main");
 	}
 
 	public void settings() {
@@ -25,9 +25,8 @@ public class Main extends PApplet {
 		background(0);
 
 		for (int i = 0; i < Paint.dog().size(); i++) {
-			Paint.dog().get(i).drawDog((i * (50)) + 80, this);
+			Paint.dog().get(i).drawDog((i * (30)) + 80, this);
 		}
-
 	}
 
 	public void keyPressed() {

@@ -33,10 +33,10 @@ public class Dog implements Comparable <Dog> {
 		app.text (this.age, posX+ 150, posY);
 		
 		app.text("Breed", 280, 45);
-		app.text (this.breed, posX + 220, posY);
+		app.text (this.breed, posX + 200, posY);
 		
 		app.text("Date", 460, 45);
-		app.text (this.date, posX+ 400, posY);
+		app.text (this.date, posX+ 350, posY);
 
 		
 	}
